@@ -69,9 +69,9 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center gap-3 mb-16">
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="size-8 rounded-full border-2 border-white bg-zinc-100 overflow-hidden shadow-sm">
+              <div className="flex -space-x-5">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="size-12 rounded-full border-4 border-white bg-zinc-100 overflow-hidden shadow-sm">
                     <Image
                       src={`https://i.pravatar.cc/150?u=${i + 200}`}
                       alt="Waitlist member"

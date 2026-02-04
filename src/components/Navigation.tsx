@@ -40,17 +40,11 @@ export default function Navigation() {
                 <div className="w-full px-3 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-1">
                         <Image
-                            src="/eba-logo.png"
+                            src="/eba-logo-text.png"
                             alt="EBA"
-                            width={32}
-                            height={32}
+                            width={80}
+                            height={80}
                             className="rounded-lg"
-                        />
-                        <Image
-                            src="/eba-text.png"
-                            alt="EBA"
-                            width={50}
-                            height={20}
                         />
                     </div>
 
