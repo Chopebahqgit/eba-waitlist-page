@@ -52,7 +52,7 @@ export default function WeeklySavings() {
             <div className="px-2 pb-4 border-gray-100 mb-2 border-0 border-b-2">
                 <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-zinc-900 rounded-full flex items-center justify-center">
-                        <Image src="/eba-logo.png" alt="EBA" width={20} height={20} className="rounded" />
+                        <Image src="/eba-logo.png" alt="Eba" width={20} height={20} className="rounded" />
                     </div>
                     <div className="text-left">
                         <p className="text-[10px] text-zinc-400">This week's savings</p>

@@ -1,6 +1,5 @@
 'use client';
 
-import { nav } from "framer-motion/client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -41,7 +40,7 @@ export default function Navigation() {
                     <div className="flex items-center gap-1">
                         <Image
                             src="/eba-logo-text.png"
-                            alt="EBA"
+                            alt="Eba"
                             width={80}
                             height={80}
                             className="rounded-lg"
@@ -73,7 +72,7 @@ export default function Navigation() {
 
                     <button
                         onClick={() => document.getElementById('waitlist-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-5 py-3 rounded-full transition-all"
+                        className="bg-green-700 hover:bg-green-800 text-white text-sm font-medium px-5 py-3 rounded-full transition-all"
                     >
                         Join the waitlist
                     </button>

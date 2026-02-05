@@ -9,13 +9,13 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Eba - Save Up to 70% on Quality Food | Join Waitlist',
-  description: 'Rescue surplus meals from Lagos & Abuja\'s best restaurants at up to 70% off. Save food, save money, and protect the environment. Join the waitlist for early access.',
+  title: 'Eba - Save Up to 50% on Quality Food | Join Waitlist',
+  description: 'Rescue surplus meals from Lagos & Abuja\'s best restaurants at up to 50% off. Save food, save money, and protect the environment. Join the waitlist for early access.',
   keywords: ['food savings', 'surplus food', 'food waste', 'Lagos restaurants', 'Abuja food', 'discount meals', 'Eba Nigeria', 'save money on food'],
   authors: [{ name: 'Eba Technologies' }],
   metadataBase: new URL('https://chopeba-waitlist.vercel.app'),
   openGraph: {
-    title: 'Eba - Save Up to 70% on Quality Food',
+    title: 'Eba - Save Up to 50% on Quality Food',
     description: 'Rescue surplus meals from Lagos & Abuja\'s best restaurants. Great prices. Zero waste.',
     type: 'website',
     locale: 'en_NG',
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Eba - Save Up to 70% on Quality Food',
-    description: 'Rescue surplus meals at up to 70% off. Join the waitlist for early access.',
+    title: 'Eba - Save Up to 50% on Quality Food',
+    description: 'Rescue surplus meals at up to 50% off. Join the waitlist for early access.',
     images: ['/eba-logo.png'],
   },
   icons: {

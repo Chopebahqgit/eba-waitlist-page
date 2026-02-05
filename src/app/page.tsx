@@ -2,37 +2,44 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import WaitlistForm, { CountdownTimer } from "@/src/components/forms/WaitlistForm";
-import { ChevronDown, Gift, Leaf, Percent, Search, ShieldCheck, ShoppingCart } from "lucide-react";
+import WaitlistForm from "@/src/components/forms/WaitlistForm";
+import { ChevronDown, Gift, Search, ShoppingCart } from "lucide-react";
 import Navigation from "../components/Navigation";
 import WeeklySavings from "../components/WeeklySavings";
 
 const faqs = [
   {
-    question: "What is EBA?",
-    answer: "EBA is a marketplace that connects you with surplus food from restaurants, bakeries, and supermarkets at heavily discounted prices. We help reduce food waste while helping you save money on quality meals."
+    question: "What is Eba?",
+    answer: "Eba is Africa's discounted food items marketplace that connects you with quality discounted food items from supermarkets, restaurants, and food businesses at 10-60% discounts. Simply browse available food items near you through our app, reserve what you want, You can have it delivered to you or pick it up during the designated time window. We help reduce food waste while helping you save money on quality meals."
   },
   {
-    question: "How much can I save?",
-    answer: "You can save up to 70% off regular prices. All our partner businesses offer their surplus food at giveaway prices because they'd rather it go to a good home than to waste."
+    question: "How much money can I actually save?",
+    answer: "Users typically save 1,000-2,000 per purchase, with annual household savings potential of 24,000-36,000. For example, a 3,000 naira food item might cost just 2,000 or a 2,000 food item could be 1200. The exact savings depend on your usage frequency and the deals available in your area."
   },
   {
     question: "Is the food fresh and safe?",
-    answer: "Absolutely. All food on EBA is same-day fresh and perfectly safe to eat. Our partners are vetted restaurants, bakeries, and supermarkets that maintain high food safety standards."
+    answer: "Absolutely. All food items on Eba is same-day fresh and perfectly safe for consumption. Our partners are vetted supermarkets, restaurants, and bakeries that maintain high food safety standards."
   },
   {
-    question: "When is EBA launching?",
-    answer: "We're launching soon in Lagos and Abuja! Join our waitlist to be the first to know when we go live. Early supporters will get exclusive discounts and priority access."
+    question: "When is Eba launching?",
+    answer: "We're launching soon in Abuja! Join our waitlist to be the first to know when we go live. Early supporters will get exclusive discounts and priority access."
   },
   {
     question: "How does it help the environment?",
-    answer: "Food waste is a major contributor to climate change. By rescuing surplus food before it's thrown away, every EBA order helps reduce greenhouse gas emissions and conserve resources."
+    answer: "Food waste is a major contributor to climate change. By rescuing surplus food before it's thrown away, every Eba order helps reduce greenhouse gas emissions and conserve resources."
+  },
+  {
+    question: "Why are the prices so low? Is this a scam?",
+    answer: "This is completely legitimate. The discounts (10-60% off) exist because businesses would otherwise throw this food away. Restaurants have surplus at closing time, supermarkets have products that are not moving as fast as projected but perfect contents, and bakeries have daily overstock. Instead of wasting this food, businesses recover 15-25% of their sunk costs by selling to you. You get quality food at great prices, they avoid total loss, and the planet benefits."
+  },
+  {
+    question: "What if the item I want is sold out before I can get it?",
+    answer: "Popular items do move quickly. When this happens, our app immediately shows alternative options nearby. You can also enable push notifications for specific categories or businesses you love, giving you first alert when new items are posted. Many users find joy in the discovery aspect, trying new supermarkets and food items they wouldn't have otherwise."
   }
 ];
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const launchDate = new Date('2026-03-20T00:00:00');
 
   return (
     <div className="flex flex-col min-h-screen max-w-screen overflow-hidden bg-[#f8f9fa]">
@@ -48,7 +55,7 @@ export default function Home() {
             <div className="animate-fade-in-up">
               <Image
                 src="/eba-logo.png"
-                alt="EBA"
+                alt="Eba"
                 width={56}
                 height={56}
                 className="mx-auto mb-8"
@@ -56,12 +63,12 @@ export default function Home() {
             </div>
 
             <h1 id="waitlist-form" className="text-4xl sm:text-5xl md:text-6xl leading-16 font-bold text-zinc-900 mb-6 animate-fade-in-up-delay-1">
-              Save Up to 70% on Quality Food
+              Save Up to 50% on Quality Food
             </h1>
 
             <p className="text-zinc-600 text-lg mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
-              Rescue surplus meals from Lagos & Abuja's best restaurants.
-              <span className="block font-medium text-zinc-700">Great prices. Zero waste. Launching soon.</span>
+              Get the best offers discounted food items from supermarkets in Abuja.
+              <span className="block font-medium text-zinc-700">Great savings. Best offers.</span>
             </p>
 
             <WaitlistForm />
@@ -96,7 +103,7 @@ export default function Home() {
                 How it works
               </h2>
               <p className="text-zinc-500 max-w-2xl mx-auto">
-                Saving food and money has never been easier. Get started in three simple steps.
+                Saving money while eating affordably has never been easier. Get started in three simple steps.
               </p>
             </div>
 
@@ -104,21 +111,21 @@ export default function Home() {
               {[
                 {
                   title: "Browse & discover",
-                  description: "Explore surplus food from restaurants, bakeries, and supermarkets near you at up to 70% off.",
+                  description: "Explore discounted food items from supermarkets around you at up to 50% off.",
                   icon: <Search className="size-8 text-white" />,
                   bgColor: "from-emerald-500 to-teal-600",
                   shapeColor: "bg-white/20"
                 },
                 {
-                  title: "Reserve your meal",
+                  title: "Reserve your food items",
                   description: "Choose what you want and place your order. Pay securely through the app in seconds.",
                   icon: <ShoppingCart className="size-8 text-orange-600" />,
                   bgColor: "from-orange-50 to-amber-50",
                   shapeColor: "bg-orange-200/30"
                 },
                 {
-                  title: "Pick up & enjoy",
-                  description: "Head to the location during pickup time and collect your delicious, discounted meal.",
+                  title: "Pick up or delivery",
+                  description: "You can have your ite delivered to you or pick it up at the store and enjoy your discounted meals.",
                   icon: <Gift className="size-8 text-rose-600" />,
                   bgColor: "from-rose-50 to-pink-50",
                   shapeColor: "bg-rose-200/30"
@@ -174,7 +181,7 @@ export default function Home() {
               Frequently asked questions
             </h2>
             <p className="text-zinc-500 max-w-xl mx-auto">
-              Everything you need to know about EBA. Find answers to the most common questions below.
+              Everything you need to know about Eba. Find answers to the most common questions below.
             </p>
           </div>
 
@@ -247,14 +254,14 @@ export default function Home() {
               <div className="flex items-center gap-3 mb-4">
                 <Image
                   src="/eba-logo.png"
-                  alt="EBA Logo"
+                  alt="Eba Logo"
                   width={40}
                   height={40}
                   className="rounded-xl"
                 />
                 <Image
                   src="/eba-text.png"
-                  alt="EBA"
+                  alt="Eba"
                   width={60}
                   height={24}
                   className="brightness-0 invert"

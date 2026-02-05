@@ -6,7 +6,7 @@ import { Loader2, CheckCircle2, Copy, X } from 'lucide-react';
 import { FaWhatsapp, FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { joinWaitlist } from '@/src/app/actions';
 import { cn, getDeviceInfo } from '@/src/lib/utils';
-import { DeviceInfo, WaitlistData } from '@/src/types';
+import { DeviceInfo } from '@/src/types';
 import Link from 'next/link';
 
 
@@ -47,7 +47,7 @@ export default function WaitlistForm() {
     }
 
     const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-    const shareText = "Join me on the EBA waitlist and let's save food together! 🌱";
+    const shareText = "Join me on the Eba waitlist and let's save food together! 🌱";
 
     const socialLinks = [
         {
