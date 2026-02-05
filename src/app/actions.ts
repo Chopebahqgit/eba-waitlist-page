@@ -2,24 +2,29 @@
 
 import { Resend } from 'resend';
 import { supabase } from '@/src/lib/supabase';
-import { DeviceInfo } from '../types';
+import { WaitlistData } from '../types';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-interface WaitlistData {
-  email: string;
-  deviceInfo?: DeviceInfo;
-}
-
 export async function joinWaitlist(data: WaitlistData) {
-  const { email, deviceInfo } = data;
+  const { email, fullName, whatsappNumber, deviceInfo } = data;
 
   if (!email) {
     return { error: 'Email is required.' };
   }
 
+  if (!fullName) {
+    return { error: 'Full name is required.' };
+  }
+
+  if (!whatsappNumber) {
+    return { error: 'WhatsApp number is required.' };
+  }
+
   const insertData: Record<string, unknown> = {
     email: email,
+    full_name: fullName,
+    whatsapp_number: whatsappNumber,
   };
 
   if (deviceInfo) {
@@ -42,6 +47,7 @@ export async function joinWaitlist(data: WaitlistData) {
     return { error: 'Something went wrong. Please try again later.' };
   }
 
+  console.log("got here")
   try {
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not configured');
@@ -49,17 +55,17 @@ export async function joinWaitlist(data: WaitlistData) {
     }
 
     const result = await resend.emails.send({
-      from: 'Eba <onboarding@resend.dev>',
+      from: 'Eba <contact@chopeba.com>',
       to: email,
-      subject: "You're on the list! Welcome to EBA",
+      subject: "You're on the list! Welcome to Eba",
       html: `
         <div style="font-family: 'Plus Jakarta Sans', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
           <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://chopeba.vercel.app/eba-logo.png" alt="EBA" width="60" height="60" style="border-radius: 16px;" />
+            <img src="https://chopeba-waitlist.vercel.app/eba-logo.png" alt="Eba" width="60" height="60" style="border-radius: 16px;" />
           </div>
           <h1 style="color: #4CAF50; text-align: center; font-size: 28px;">Welcome to Eba! 🎉</h1>
-          <p style="font-size: 16px;">Hi there,</p>
-          <p style="font-size: 16px; line-height: 1.6;">Thanks for joining the waitlist for <strong>EBA</strong>. You're now part of a movement to reduce food waste while saving money on quality meals.</p>
+          <p style="font-size: 16px;">Hi ${fullName},</p>
+          <p style="font-size: 16px; line-height: 1.6;">Thanks for joining the waitlist for <strong>Eba</strong>. You're now part of a movement to reduce food waste while saving money on quality meals.</p>
           <p style="font-size: 16px; line-height: 1.6;">We're launching soon in Lagos and Abuja. You'll be among the first to know when we go live!</p>
           <div style="background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); padding: 24px; border-radius: 16px; margin: 30px 0; text-align: center;">
             <h3 style="margin: 0 0 12px 0; color: white; font-size: 18px;">Join Our Community</h3>

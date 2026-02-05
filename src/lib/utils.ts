@@ -6,7 +6,6 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-
 export function getDeviceInfo(): DeviceInfo {
     const ua = navigator.userAgent;
 

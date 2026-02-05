@@ -64,9 +64,7 @@ export default function Home() {
               <span className="block font-medium text-zinc-700">Great prices. Zero waste. Launching soon.</span>
             </p>
 
-            <div className="max-w-md mx-auto mb-8 animate-fade-in-up-delay-3">
-              <WaitlistForm />
-            </div>
+            <WaitlistForm />
 
             <div className="flex items-center justify-center gap-3 mb-16">
               <div className="flex -space-x-5">
@@ -219,9 +217,7 @@ export default function Home() {
                   Join our waitlist today and be among the first to access quality meals at unbeatable prices while fighting food waste.
                 </p>
 
-                <div className="max-w-md w-full mx-auto mb-6">
-                  <WaitlistForm />
-                </div>
+                <WaitlistForm />
 
                 <div className="flex items-center justify-center gap-3 text-sm text-zinc-500">
                   <div className="flex -space-x-2">

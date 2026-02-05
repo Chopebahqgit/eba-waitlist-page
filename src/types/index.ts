@@ -6,3 +6,9 @@ export interface DeviceInfo {
     timezone: string;
 }
 
+export interface WaitlistData {
+    email: string;
+    fullName: string;
+    whatsappNumber: string;
+    deviceInfo?: DeviceInfo;
+}
