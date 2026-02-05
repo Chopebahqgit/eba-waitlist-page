@@ -55,7 +55,7 @@ export default function Home() {
               />
             </div>
 
-            <h1 id="waitlist-form" className="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 mb-6 animate-fade-in-up-delay-1">
+            <h1 id="waitlist-form" className="text-4xl sm:text-5xl md:text-6xl leading-16 font-bold text-zinc-900 mb-6 animate-fade-in-up-delay-1">
               Save Up to 70% on Quality Food
             </h1>
 

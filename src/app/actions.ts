@@ -43,8 +43,13 @@ export async function joinWaitlist(data: WaitlistData) {
   }
 
   try {
-    await resend.emails.send({
-      from: 'EBA <onboarding@resend.dev>',
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured');
+      return { success: true };
+    }
+
+    const result = await resend.emails.send({
+      from: 'Eba <onboarding@resend.dev>',
       to: email,
       subject: "You're on the list! Welcome to EBA",
       html: `
@@ -52,7 +57,7 @@ export async function joinWaitlist(data: WaitlistData) {
           <div style="text-align: center; margin-bottom: 30px;">
             <img src="https://chopeba.vercel.app/eba-logo.png" alt="EBA" width="60" height="60" style="border-radius: 16px;" />
           </div>
-          <h1 style="color: #4CAF50; text-align: center; font-size: 28px;">Welcome to EBA! 🎉</h1>
+          <h1 style="color: #4CAF50; text-align: center; font-size: 28px;">Welcome to Eba! 🎉</h1>
           <p style="font-size: 16px;">Hi there,</p>
           <p style="font-size: 16px; line-height: 1.6;">Thanks for joining the waitlist for <strong>EBA</strong>. You're now part of a movement to reduce food waste while saving money on quality meals.</p>
           <p style="font-size: 16px; line-height: 1.6;">We're launching soon in Lagos and Abuja. You'll be among the first to know when we go live!</p>
@@ -71,11 +76,13 @@ export async function joinWaitlist(data: WaitlistData) {
           </div>
           <p style="margin-top: 30px; font-size: 14px; color: #999; text-align: center;">
             Save food. Save money. Save the planet.<br/>
-            <strong style="color: #333;">The EBA Team</strong>
+            <strong style="color: #333;">The Eba Team</strong>
           </p>
         </div>
       `,
     });
+
+    console.log('Email sent successfully:', result);
   } catch (emailError) {
     console.error('Error sending email:', emailError);
   }
