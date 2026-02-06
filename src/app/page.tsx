@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import WaitlistForm from "@/src/components/forms/WaitlistForm";
-import { ChevronDown, Gift, Search, ShoppingCart } from "lucide-react";
+import { ChevronDown, Gift, Search, ShoppingCart, Instagram, Music, Linkedin, Twitter, Facebook } from "lucide-react";
 import Navigation from "../components/Navigation";
 import WeeklySavings from "../components/WeeklySavings";
 
@@ -63,11 +63,11 @@ export default function Home() {
             </div>
 
             <h1 id="waitlist-form" className="text-4xl sm:text-5xl md:text-6xl leading-16 font-bold text-zinc-900 mb-6 animate-fade-in-up-delay-1">
-              Save Up to 50% on Quality Food
+              Stop spending 35% of your salary on food
             </h1>
 
             <p className="text-zinc-600 text-lg mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up-delay-2">
-              Get the best offers discounted food items from supermarkets in Abuja.
+              Get the best offers on discounted food items from supermarkets in Abuja.
               <span className="block font-medium text-zinc-700">Great savings. Best offers.</span>
             </p>
 
@@ -270,6 +270,55 @@ export default function Home() {
               <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-sm text-center">
                 Save food, save money, and protect the environment. Get quality meals at giveaway prices.
               </p>
+
+              {/* Social Media Links */}
+              <div className="flex items-center gap-4 mb-6">
+                <a
+                  href="https://www.instagram.com/chopebahq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@chopebahq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="TikTok"
+                >
+                  <Music className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/chopebahq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://x.com/ChopebaHQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-black flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="X (Twitter)"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/chopebahq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              </div>
             </div>
             <p className="text-zinc-500 text-sm">
               Eba Technologies © 2026. All Rights Reserved

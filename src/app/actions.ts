@@ -47,7 +47,6 @@ export async function joinWaitlist(data: WaitlistData) {
     return { error: 'Something went wrong. Please try again later.' };
   }
 
-  console.log("got here")
   try {
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not configured');
